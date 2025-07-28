@@ -14,6 +14,13 @@ on:
     # 例：如需调整为14:30， 将45改为30即可
     # 设置仅周内运行，将最后一个'*'改为'1-5'
     - cron: '45 6 * * 1-5'
+  workflow_dispatch:
+   inputs:
+     debug_mode:
+     description: '启用调试模式'
+     required: false
+     default: 'false'
+     type: boolean
 
 jobs:
   LOF:
