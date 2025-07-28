@@ -17,10 +17,10 @@ on:
   workflow_dispatch:
    inputs:
      debug_mode:
-     description: '启用调试模式'
-     required: false
-     default: 'false'
-     type: boolean
+       description: '启用调试模式'
+       required: false
+       default: 'false'
+       type: boolean
 
 jobs:
   LOF:
