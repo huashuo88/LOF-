@@ -58,15 +58,15 @@ class LOF:
     #def message(self, key, title, body):
         #msg_url = "https://sc.ftqq.com/{}.send?text={}&desp={}".format(key, title, body)
         #requests.get(msg_url)
-    def message(key, title, body):
-        msg_url = f"https://sc.ftqq.com/{key}.send?text={title}&desp={body}"
+    def message(self, key, title, body):
+        msg_url = f"https://scapi.ftqq.com/{key}.send?text={title}&desp={body}"
         response = requests.get(msg_url)
         if response.status_code == 200:
             print("消息发送成功")
         else:
             print(f"消息发送失败，状态码：{response.status_code}")
     def main(self):
-        info = self.getInfo(id)
+        info = self.getInfo()
         if len(info):
             md = self.md(info)
             self.message(self.apiKey, "LOF-溢价: " + datetime.now(tz=pytz.timezone("Asia/Shanghai")).strftime("%m-%d %H:%M"), md)
