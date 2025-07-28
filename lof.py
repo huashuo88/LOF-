@@ -66,7 +66,7 @@ class LOF:
         else:
             print(f"消息发送失败，状态码：{response.status_code}")
     def main(self):
-        info = self.getInfo()
+        info = self.getInfo(id)
         if len(info):
             md = self.md(info)
             self.message(self.apiKey, "LOF-溢价: " + datetime.now(tz=pytz.timezone("Asia/Shanghai")).strftime("%m-%d %H:%M"), md)
