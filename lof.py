@@ -55,10 +55,16 @@ class LOF:
         res = "\n".join(res)
         return res
 
-    def message(self, key, title, body):
-        msg_url = "https://sc.ftqq.com/{}.send?text={}&desp={}".format(key, title, body)
-        requests.get(msg_url)
-
+    #def message(self, key, title, body):
+        #msg_url = "https://sc.ftqq.com/{}.send?text={}&desp={}".format(key, title, body)
+        #requests.get(msg_url)
+    def message(key, title, body):
+        msg_url = f"https://sc.ftqq.com/{key}.send?text={title}&desp={body}"
+        response = requests.get(msg_url)
+        if response.status_code == 200:
+            print("消息发送成功")
+        else:
+            print(f"消息发送失败，状态码：{response.status_code}")
     def main(self):
         info = self.getInfo(id)
         if len(info):
