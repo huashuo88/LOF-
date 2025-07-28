@@ -59,7 +59,7 @@ class LOF:
         #msg_url = "https://sc.ftqq.com/{}.send?text={}&desp={}".format(key, title, body)
         #requests.get(msg_url)
     def message(self, key, title, body):
-        msg_url = f"https://scapi.ftqq.com/{key}.send?text={title}&desp={body}"
+        msg_url = f"https://sctapi.ftqq.com/{key}.send?text={title}&desp={body}"
         response = requests.get(msg_url)
         if response.status_code == 200:
             print("消息发送成功")
